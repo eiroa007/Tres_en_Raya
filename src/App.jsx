@@ -1,10 +1,11 @@
-import React from 'react';
 import './App.css';
+import React from 'react';
+import { Outlet } from 'react-router-dom';
 
 const App = () => {
   return (
     <>
-      <h1>Hola</h1>
+      <Outlet />
     </>
   );
 };
