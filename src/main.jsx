@@ -1,20 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App.jsx';
 import './index.css';
 
-import Home from "./pages/Home/Home.jsx";
-import NotFound from "./pages/NotFound/NotFound.jsx";
-import Juegos from "./pages/Juegos/Juegos.jsx";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
+import App from './App.jsx';
+import Home from './Pages/Home/Home';
+import Juego from './Pages/Juego/Juego';
+import Notfound from './Pages/Notfound/Notfound';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <React.StrictMode>
-      <BrowserRouter basename='/'>
+  <React.StrictMode>
+    <BrowserRouter basename="/">
       <Routes>
-      <Route path='/' element={<App/>}>
-      <Route index element={<Home />} />
-      <Route path='/Juegos'/>
-    </React.StrictMode>,
+        <Route path="/" element={<App />}>
+          <Route index element={<Home />} />
+          <Route path="/Juego" element={<Juego />} />
+          <Route path="*" element={<Notfound />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  </React.StrictMode>,
 );
